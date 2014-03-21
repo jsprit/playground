@@ -27,10 +27,10 @@ public class AbeProblemFastRelation {
 	
 	public static void main(String[] args) throws IOException {
 		VehicleRoutingProblem.Builder vrpBuilder = VehicleRoutingProblem.Builder.newInstance();
-		new VrpXMLReader(vrpBuilder).read("/Users/schroeder/Documents/jsprit/abraham/abrahamProblem.xml");
+		new VrpXMLReader(vrpBuilder).read("input/abe/abrahamProblem.xml");
 		VehicleRoutingTransportCostsMatrix.Builder matrixBuilder = VehicleRoutingTransportCostsMatrix.Builder.newInstance(true);
 		final MatrixReader matrixReader = new MatrixReader(matrixBuilder);
-		matrixReader.read("/Users/schroeder/Documents/jsprit/abraham/Matrix.txt");
+		matrixReader.read("input/abe/abraham/Matrix.txt");
 //		VehicleRoutingTransportCostsMatrix matrix = matrixBuilder.build();
 		
 		VehicleRoutingTransportCosts costs = new AbstractForwardVehicleRoutingTransportCosts() {
@@ -65,15 +65,15 @@ public class AbeProblemFastRelation {
 		
 		Plotter plotter = new Plotter(problem);
 		plotter.setLabel(Label.ID);
-		plotter.plot("output/abeProblem.png", "abe");
+		plotter.plot("output/abe/abeProblem.png", "abe");
 		
 //		VehicleRoutingAlgorithm algo = new SchrimpfFactory().createAlgorithm(problem); 
-		VehicleRoutingAlgorithm algo = VehicleRoutingAlgorithms.readAndCreateAlgorithm(problem, "/Users/schroeder/Documents/jsprit/abraham/algorithmConfig_stefan.xml");
+		VehicleRoutingAlgorithm algo = VehicleRoutingAlgorithms.readAndCreateAlgorithm(problem, "input/abe/algorithmConfig_stefan.xml");
 		algo.addListener(new AlgorithmSearchProgressChartListener("output/progress.png"));
 		Collection<VehicleRoutingProblemSolution> solutions = algo.searchSolutions();
 		
 		Plotter plotter2 = new Plotter(problem,Solutions.bestOf(solutions));
-		plotter2.plot("output/abeProblemFastRelation.png", "abe");
+		plotter2.plot("output/abe/abeProblemFastRelation.png", "abe");
 		
 		SolutionPrinter.print(problem, Solutions.bestOf(solutions), Print.VERBOSE);
 		

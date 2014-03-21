@@ -22,17 +22,17 @@ public class AbeProblem {
 	
 	public static void main(String[] args) throws IOException {
 		VehicleRoutingProblem.Builder vrpBuilder = VehicleRoutingProblem.Builder.newInstance();
-		new VrpXMLReader(vrpBuilder).read("/Users/schroeder/Documents/jsprit/abraham/abrahamProblem.xml");
+		new VrpXMLReader(vrpBuilder).read("input/abe/abrahamProblem.xml");
 		VehicleRoutingTransportCostsMatrix.Builder matrixBuilder = VehicleRoutingTransportCostsMatrix.Builder.newInstance(true);
 		final MatrixReader matrixReader = new MatrixReader(matrixBuilder);
-		matrixReader.read("/Users/schroeder/Documents/jsprit/abraham/Matrix.txt");
+		matrixReader.read("input/abe/Matrix.txt");
 		VehicleRoutingTransportCostsMatrix matrix = matrixBuilder.build();
 		
 		vrpBuilder.setRoutingCost(matrix);
 		VehicleRoutingProblem problem = vrpBuilder.build();
 		
 		Plotter plotter = new Plotter(problem);
-		plotter.plot("output/abeProblem.png", "abe");
+		plotter.plot("output/abe/abeProblem.png", "abe");
 		
 //		VehicleRoutingAlgorithm algo = new SchrimpfFactory().createAlgorithm(problem); 
 		VehicleRoutingAlgorithm algo = VehicleRoutingAlgorithms.readAndCreateAlgorithm(problem, "/Users/schroeder/Documents/jsprit/abraham/algorithmConfig_stefan.xml");
@@ -44,7 +44,7 @@ public class AbeProblem {
 		
 		Plotter plotter2 = new Plotter(problem,Solutions.bestOf(solutions));
 		plotter2.setShowFirstActivity(true);
-		plotter2.plot("output/abeProblemWithSolution.png", "abe");
+		plotter2.plot("output/abe/abeProblemWithSolution.png", "abe");
 		
 		SolutionPrinter.print(problem, Solutions.bestOf(solutions), Print.VERBOSE);
 		

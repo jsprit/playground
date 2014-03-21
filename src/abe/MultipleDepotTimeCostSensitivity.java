@@ -52,7 +52,7 @@ public class MultipleDepotTimeCostSensitivity {
 		VehicleRoutingTransportCostsMatrix.Builder matrixBuilder = VehicleRoutingTransportCostsMatrix.Builder.newInstance(false);
 		boolean matrixSet = false;
 		
-		BufferedWriter writer = new BufferedWriter(new FileWriter(new File("output/costOfTimeSensitivity.txt")));
+		BufferedWriter writer = new BufferedWriter(new FileWriter(new File("output/abe/costOfTimeSensitivity.txt")));
 		
 //		double costPerTime = 1.0;
 		writer.write("costPerTimeUnit;run;costs;time;distance\n");
@@ -63,7 +63,7 @@ public class MultipleDepotTimeCostSensitivity {
 				/*
 				 * Read cordeau-instance p01, BUT only its services without any vehicles 
 				 */
-				new VrpXMLReader(vrpBuilder).read("input/vrp_cordeau_01.xml");
+				new VrpXMLReader(vrpBuilder).read("input/abe/vrp_cordeau_01.xml");
 
 				/*
 				 * add vehicles with its depots
@@ -136,7 +136,7 @@ public class MultipleDepotTimeCostSensitivity {
 				/*
 				 * solve the problem
 				 */
-				VehicleRoutingAlgorithm vra = VehicleRoutingAlgorithms.readAndCreateAlgorithm(vrp, "/Users/schroeder/Documents/jsprit/abraham/algorithmConfig_stefan.xml");
+				VehicleRoutingAlgorithm vra = VehicleRoutingAlgorithms.readAndCreateAlgorithm(vrp, "input/abe/algorithmConfig_stefan.xml");
 				//		vra.getAlgorithmListeners().addListener(new StopWatch(),Priority.HIGH);
 				//		vra.getAlgorithmListeners().addListener(new AlgorithmSearchProgressChartListener("output/progress.png"));
 //				VariationCoefficientTermination prematureTermination = new VariationCoefficientTermination(100, 0.01);
