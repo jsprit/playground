@@ -1,4 +1,4 @@
 playground
 ==========
 
-to make experiments and to support
+to experiment with jsprit
