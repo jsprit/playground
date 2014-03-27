@@ -16,29 +16,28 @@
       </plugin>
     </plugins>
   </build>
-  <dependencies> <!-- add this, if you don't have any dependency definitions yet -->
+ <dependencies> <!-- add this, if you don't have any dependency definitions yet -->
   <dependency>
     <groupId>jsprit</groupId>
     <artifactId>jsprit-core</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1-SNAPSHOT</version>
   </dependency>
   <dependency>
     <groupId>jsprit</groupId>
     <artifactId>jsprit-analysis</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1-SNAPSHOT</version>
   </dependency>
   <dependency>
     <groupId>jsprit</groupId>
     <artifactId>jsprit-instances</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1-SNAPSHOT</version>
   </dependency>
 </dependencies> <!-- add this, if you don't have any dependency definitions yet -->
 
 <repositories> <!-- add this, if you don't have any repository definitions yet -->
   <repository>
-    <id>jsprit-releases</id>
-    <url>https://github.com/jsprit/mvn-rep/raw/master/releases</url>
+    <id>jsprit-snapshots</id>
+    <url>https://github.com/jsprit/mvn-rep/raw/master/snapshots</url>
   </repository>
 </repositories> <!-- add this, if you don't have any repository definitions yet -->
-  
 </project>
