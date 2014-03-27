@@ -99,7 +99,7 @@ public class AbeProblemMinMax {
 		 */
 		SolutionCostCalculator objectiveFunction = new SolutionCostCalculator() {
 			
-			private double scalingParameter = 0.8;
+			private double scalingParameter = 0.2;
 			
 			@Override
 			public double getCosts(VehicleRoutingProblemSolution solution) {
