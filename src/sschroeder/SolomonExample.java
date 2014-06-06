@@ -71,7 +71,7 @@ public class SolomonExample {
 		
 		/*
 		 * The next lines of code are to consider a maximum working time of drivers of 600. time units. Additionally, the algorithm
-		 * optimizes departure times at the depot such that waiting times at the first activity of a route is avoided, i.e. the
+		 * optimizes departure times at the depot such that waiting times at the first activity of a route are avoided, i.e. the
 		 * vehicle starts at the depot such that it just arrives at the earliestOperationStartTime of the first activity, i.e. 
 		 * actualDepartureTime = max(earliestStartOfVehicle, firstActivity.earliestOperationStart - tpTime(start,firstActivity)).
 		 * If the vehicle departs later, it can also arrive later as long as actualArrival <= latestArrivalOfVehicle holds. 
