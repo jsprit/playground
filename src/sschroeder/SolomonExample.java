@@ -74,7 +74,7 @@ public class SolomonExample {
 		 * optimizes departure times at the depot such that waiting times at the first activity of a route are avoided, i.e. the
 		 * vehicle starts at the depot such that it just arrives at the earliestOperationStartTime of the first activity, i.e. 
 		 * actualDepartureTime = max(earliestStartOfVehicle, firstActivity.earliestOperationStart - tpTime(start,firstActivity)).
-		 * If the vehicle departs later, it can also arrive later as long as actualArrival <= latestArrivalOfVehicle holds. 
+		 * If the vehicle departs later, it can also arrive at its endLocation later as long as actualArrival@depot <= latestArrivalOfVehicle and actualArrival@depot-actualDepartureTime <= driverOperationTime hold. 
 		 * 
 		 * For example:  
 		 * 
