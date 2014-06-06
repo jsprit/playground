@@ -41,6 +41,7 @@ public class DepartureTimeReScheduler implements AlgorithmEndsListener {
 						earliestDepartureTime, null, route.getVehicle());
 				double newDepartureTime = Math.max(earliestDepartureTime, firstActivity.getTheoreticalEarliestOperationStartTime()-tpTime_startToFirst);
 				route.setVehicleAndDepartureTime(route.getVehicle(), newDepartureTime);
+				updateActivityTimes(route, problem.getTransportCosts());
 			}
 		}
 	}
